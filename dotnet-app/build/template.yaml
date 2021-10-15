@@ -1,0 +1,50 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'SAM Template for dotnet-app
+
+  '
+Globals:
+  Function:
+    Timeout: 10
+  Api:
+    BinaryMediaTypes:
+    - image~1vnd.microsoft.icon
+Resources:
+  ServerlessExampleFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ServerlessExampleFunction
+      Handler: ServerlessExample::ServerlessExample.Function::FunctionHandler
+      Runtime: dotnetcore3.1
+      MemorySize: 256
+      Environment:
+        Variables:
+          PARAM1: VALUE
+      Events:
+        ServerlessExample:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: get
+        Favicon:
+          Type: Api
+          Properties:
+            Path: /favicon.ico
+            Method: get
+Outputs:
+  ServerlessExampleApi:
+    Description: API Gateway endpoint URL for Prod stage forvServerless Example function
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/
+  ServerlessExampleFunction:
+    Description: Serverless Example Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - ServerlessExampleFunction
+      - Arn
+  ServerlessExampleFunctionIamRole:
+    Description: Implicit IAM Role created for Serverless Example function
+    Value:
+      Fn::GetAtt:
+      - ServerlessExampleFunctionRole
+      - Arn
