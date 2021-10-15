@@ -18,4 +18,4 @@ project:
     - us-west-2
 tests:
   default:
-    template: cfn/serverless-cicd.yml
+    template: templates/serverless-cicd.template.yaml
