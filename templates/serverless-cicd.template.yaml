@@ -24,6 +24,11 @@ Resources:
   # CodeBuild
   CodeBuildServiceRole:
     Type: AWS::IAM::Role
+    Metadata:
+      cfn-lint:
+        config:
+          ignore_checks:
+            - EIAMPolicyWildcardResource
     Properties:
       Path: /
       AssumeRolePolicyDocument:
@@ -44,7 +49,7 @@ Resources:
                   - logs:CreateLogGroup
                   - logs:CreateLogStream
                   - logs:PutLogEvents
-              - Resource: !Sub arn:aws:s3:::${ArtifactStore}/*
+              - Resource: !Sub arn:${AWS::Partition}:s3:::${ArtifactStore}/*
                 Effect: Allow
                 Action:
                   - s3:GetObject
@@ -76,7 +81,7 @@ Resources:
                   - 'codecommit:UploadArchive'
                   - 'codecommit:GetUploadArchiveStatus'
                   - 'codecommit:CancelUploadArchive'
-              - Resource: !Sub arn:aws:s3:::${ArtifactStore}/*
+              - Resource: !Sub arn:${AWS::Partition}:s3:::${ArtifactStore}/*
                 Effect: Allow
                 Action:
                   - s3:PutObject
@@ -91,7 +96,7 @@ Resources:
                 Action:
                   - codebuild:StartBuild
                   - codebuild:BatchGetBuilds
-              - Resource: !Sub arn:aws:cloudformation:*:${AWS::AccountId}:stack/*/*
+              - Resource: !Sub arn:${AWS::Partition}:cloudformation:*:${AWS::AccountId}:stack/*/*
                 Effect: Allow
                 Action:
                 - cloudformation:DescribeStacks
@@ -114,17 +119,17 @@ Resources:
           PolicyDocument:
             Version: 2012-10-17
             Statement:
-              - Resource: !Sub arn:aws:s3:::${ArtifactStore}/*
+              - Resource: !Sub arn:${AWS::Partition}:s3:::${ArtifactStore}/*
                 Effect: Allow
                 Action:
                   - s3:GetObject
                   - s3:GetObjectVersion
                   - s3:GetBucketVersioning
       ManagedPolicyArns:
-        - arn:aws:iam::aws:policy/AWSCloudFormationFullAccess
-        - arn:aws:iam::aws:policy/IAMFullAccess
-        - arn:aws:iam::aws:policy/AWSLambda_FullAccess
-        - arn:aws:iam::aws:policy/AmazonAPIGatewayAdministrator
+        - !Sub arn:${AWS::Partition}:iam::aws:policy/AWSCloudFormationFullAccess
+        - !Sub arn:${AWS::Partition}:iam::aws:policy/IAMFullAccess
+        - !Sub arn:${AWS::Partition}:iam::aws:policy/AWSLambda_FullAccess
+        - !Sub arn:${AWS::Partition}:iam::aws:policy/AmazonAPIGatewayAdministrator
 
   # CodeDeploy
   CodeDeployServiceRole:
@@ -138,7 +143,8 @@ Resources:
             Principal:
               Service: codedeploy.amazonaws.com
             Action: sts:AssumeRole
-      ManagedPolicyArns: [ 'arn:aws:iam::aws:policy/service-role/AWSCodeDeployRole' ]
+      ManagedPolicyArns:
+        - !Sub arn:${AWS::Partition}:iam::aws:policy/service-role/AWSCodeDeployRole
 
 ## CI/CD
   # CodeCommit and initial population
@@ -169,7 +175,7 @@ Resources:
               ActionTypeId:
                 Category: Source
                 Owner: AWS
-                Version: 1
+                Version: '1'
                 Provider: CodeCommit
               Configuration:
                 BranchName: main
@@ -183,7 +189,7 @@ Resources:
               ActionTypeId:
                 Category: Build
                 Owner: AWS
-                Version: 1
+                Version: '1'
                 Provider: CodeBuild
               Configuration:
                 ProjectName: !Ref CodeBuildProject
@@ -198,7 +204,7 @@ Resources:
               ActionTypeId:
                 Category: Deploy
                 Owner: AWS
-                Version: 1
+                Version: '1'
                 Provider: CloudFormation
               Configuration:
                 ActionMode: REPLACE_ON_FAILURE
