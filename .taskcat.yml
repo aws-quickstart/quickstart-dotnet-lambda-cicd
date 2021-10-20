@@ -1,5 +1,5 @@
 project:
-  owner: andyhopp@amazon.com
+  owner: quickstart-eng@amazon.com
   name: quickstart-dotnet-lambda-cicd
   regions:
     - ap-northeast-1
