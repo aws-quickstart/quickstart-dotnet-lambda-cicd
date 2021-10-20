@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 
-Description: .NET CI/CD Environment
+Description: This template deploys a serverless .NET CI/CD environment (qs-1sctmf6gg)
 Mappings:
   CodeBuildImages:
     DotNet:
