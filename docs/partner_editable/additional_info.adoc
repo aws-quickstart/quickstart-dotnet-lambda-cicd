@@ -2,22 +2,21 @@
 //Should any sections not be applicable, remove them
 
 == Test the deployment
-// If steps are required to test the deployment, add them here. If not, remove the heading
+This Quick Start includes CloudFormation output parameters that provide links to the infrastructure deployed by the Quick Start:
 
+|RepoUrl |The URL to use Git when creating a clone of the CodeCommit repository.
+|CodePipelineUrl |The URL to navigate directly to the CodePipeline pipeline for the application.
+
+After deploying this Quick Start, a build of the application will be started. You may use your browser to navigate to the CodePipeline URL to observe the build process. After the build completes, the deployment process for the application creates a CloudFormation that will be named "<Quick Start Stack Name>-Deploy" using the name you entered when launching this Quick Start. This stack will also include an output parameter that can be used to view your deployed application:
+
+|ServerlessExampleApi |A URL for the API Gateway stage that exposes the application.
+  
 == Post-deployment steps
 // If post-deployment steps are required, add them here. If not, remove the heading
+Once you have deployed this Quick Start, you may use the CodeCommit repository URL to clone the repo and make modifications to the application. Any changes pushed to the repository will trigger an execution of the CodePipeline as well as a deployment of the application.
+
+This Quick Start uses CloudFormation to deploy an application using a IAM role created by the Quick Start template. When deleting the stack created by launching this Quick Start's template, it is important to first delete the deployed application stack in order to avoid an error due to this IAM role having been deleted.
 
 == Best practices for using {partner-product-short-name} on AWS
 // Provide post-deployment best practices for using the technology on AWS, including considerations such as migrating data, backups, ensuring high performance, high availability, etc. Link to software documentation for detailed information.
-
-_Add any best practices for using the software._
-
-== Security
-// Provide post-deployment best practices for using the technology on AWS, including considerations such as migrating data, backups, ensuring high performance, high availability, etc. Link to software documentation for detailed information.
-
-_Add any security-related information._
-
-== Other useful information
-//Provide any other information of interest to users, especially focusing on areas where AWS or cloud usage differs from on-premises usage.
-
-_Add any other details that will help the customer use the software on AWS._
+This Quick Start uses https://aws.amazon.com/serverless/sam/[AWS Serverless Application Model] to define and deploy an application. While you are able to (and encouraged) to modify the code for this application, it is recommended that you maintain the definition of the application in the AWS SAM template delivered with the code in the CodeCommit repository created by the Quick Start.
