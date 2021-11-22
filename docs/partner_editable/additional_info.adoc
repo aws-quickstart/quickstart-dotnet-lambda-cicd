@@ -4,12 +4,20 @@
 == Test the deployment
 This Quick Start includes CloudFormation output parameters that provide links to the infrastructure deployed by the Quick Start:
 
+|===
+|Ouput |Description
+
 |RepoUrl |The URL to use Git when creating a clone of the CodeCommit repository.
 |CodePipelineUrl |The URL to navigate directly to the CodePipeline pipeline for the application.
+|===
 
 After deploying this Quick Start, a build of the application will be started. You may use your browser to navigate to the CodePipeline URL to observe the build process. After the build completes, the deployment process for the application creates a CloudFormation that will be named "<Quick Start Stack Name>-Deploy" using the name you entered when launching this Quick Start. This stack will also include an output parameter that can be used to view your deployed application:
 
+|===
+|Ouput |Description
+
 |ServerlessExampleApi |A URL for the API Gateway stage that exposes the application.
+|===
   
 == Post-deployment steps
 // If post-deployment steps are required, add them here. If not, remove the heading
