@@ -19,7 +19,7 @@ After deploying this Quick Start, a build of the application will be started. Yo
 |ServerlessExampleApi |A URL for the API Gateway stage that exposes the application.
 |===
   
-== Post-deployment steps
+== Postdeployment steps
 // If post-deployment steps are required, add them here. If not, remove the heading
 Once you have deployed this Quick Start, you may use the CodeCommit repository URL to clone the repo and make modifications to the application. Any changes pushed to the repository will trigger an execution of the CodePipeline as well as a deployment of the application.
 

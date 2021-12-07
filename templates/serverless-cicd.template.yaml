@@ -248,4 +248,7 @@ Outputs:
     Value: !Ref Pipeline
   CodePipelineUrl:
     Value: !Sub https://console.aws.amazon.com/codepipeline/home?region=${AWS::Region}#/view/${Pipeline}
+  Postdeployment:
+    Description: See the deployment guide for post-deployment steps.
+    Value: <permalink to guide>
   
