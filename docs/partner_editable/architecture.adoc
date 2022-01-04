@@ -8,14 +8,16 @@ AWS Cloud.
 
 [#architecture1]
 .Quick Start architecture for {partner-product-short-name} on AWS
-image::../images/architecture_diagram.png[Architecture]
+image::../images/dotnet-lambda-cicd-architecture-diagram.png[Architecture]
 
 As shown in <<architecture1>>, the Quick Start sets up the following:
 
-* A highly available architecture that uses fully-managed AWS services.
-* An implementation of a CI/CD pipeline using AWS DevOps services:
-** An AWS CodeCommit code repository to host application source code.
-** An AWS CodePipeline build orchestration pipeline that automatically triggers a build process when changes are pushed to the code repository.
-** A CodePipeline stage that performs the build process of the application code and generation of an AWS CloudFormation template using AWS CodeBuild and AWS SAM.
-** A CodePipeline stage that deploys the updated CloudFormation template to AWS using AWS CloudFormation.
-* AWS Identity and Access Management roles for the CI/CD pipeline's build and deployment process.
+* CodePipeline to create a pipeline with source, build, and deploy stages. The pipeline is invoked when a developer commits a code change to the AWS CodeCommit repository. 
+** A CodeCommit repository to host the application source code.
+** AWS CodeBuild to generate an AWS CloudFormation template from the source code.
+** AWS CodeDeploy to deploy the template.
+* CloudFormation to provision and configure the AWS Lambda application.
+* An AWS Lambda function to run the code.
+* API Gateway to expose the application to the internet.
+* An Amazon Simple Storage Service (Amazon S3) bucket to store pipeline artifacts.
+* AWS Identification and Access Management (IAM) for IAM roles used by CodeBuild, CodeDeploy, and CloudFormation.

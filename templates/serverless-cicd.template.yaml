@@ -288,14 +288,14 @@ Resources:
 ## Outputs     
 Outputs:
   RepoUrl:
-    Description: The URL for the CodeCommit repository
+    Description: CodeCommit repository URL.
     Value: !GetAtt SourceRepository.CloneUrlHttp
   CodePipelineName:
-    Description: The name of the CodePipeline pipeline created for this workshop.
+    Description: CodePipeline pipeline name.
     Value: !Ref Pipeline
   CodePipelineUrl:
     Value: !Sub https://console.aws.amazon.com/codepipeline/home?region=${AWS::Region}#/view/${Pipeline}
   Postdeployment:
-    Description: See the deployment guide for post-deployment steps.
+    Description: See the deployment guide for postdeployment steps.
     Value: <permalink to guide>
   

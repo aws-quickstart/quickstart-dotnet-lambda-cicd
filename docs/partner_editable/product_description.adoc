@@ -2,5 +2,5 @@
 // Briefly describe the software. Use consistent and clear branding. 
 // Include the benefits of using the software on AWS, and provide details on usage scenarios.
 
-This Quick Start deploys a complete CI/CD pipeline that uses https://aws.amazon.com/serverless/sam/[AWS Serverless Application Model] to build and deploy a Serverless .NET application.
+This Quick Start deploys a complete CI/CD pipeline that uses https://aws.amazon.com/serverless/sam/[AWS Serverless Application Model] to build and deploy a serverless .NET application.
 
