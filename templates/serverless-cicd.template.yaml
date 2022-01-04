@@ -297,5 +297,5 @@ Outputs:
     Value: !Sub https://console.aws.amazon.com/codepipeline/home?region=${AWS::Region}#/view/${Pipeline}
   Postdeployment:
     Description: See the deployment guide for postdeployment steps.
-    Value: <permalink to guide>
+    Value: https://fwd.aws/EvrJV?
   
