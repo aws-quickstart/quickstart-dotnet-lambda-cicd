@@ -5,6 +5,9 @@ Metadata:
     config:
       ignore_checks:
         - W9006
+  QuickStartDocumentation:
+    EntrypointName: Deployment parameters
+    Order: "1"
   AWS::CloudFormation::Interface:
     ParameterGroups:
       - Label:
@@ -14,9 +17,9 @@ Metadata:
           - QSS3KeyPrefix
     ParameterLabels:
       QSS3BucketName:
-        default: "S3 Bucket Name"
+        default: Quick Start S3 bucket name
       QSS3KeyPrefix:
-        default: "S3 Key Prefix Name (Path in the bucket inclusive of quickstart-qumulo-cloud-q folder)"
+        default: Quick Start S3 key prefix (path in the bucket inclusive of `quickstart-qumulo-cloud-q` folder)
 Parameters:
   QSS3BucketName:
     AllowedPattern: '^[0-9a-zA-Z]+([0-9a-zA-Z-]*[0-9a-zA-Z])*$'

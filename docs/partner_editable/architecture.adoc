@@ -18,6 +18,6 @@ As shown in <<architecture1>>, the Quick Start sets up the following:
 ** AWS CodeDeploy to deploy the template.
 * CloudFormation to provision and configure the AWS Lambda application.
 * An AWS Lambda function to run the code.
-* API Gateway to expose the application to the internet.
+* API Gateway endpoint to expose the application to the internet.
 * An Amazon Simple Storage Service (Amazon S3) bucket to store pipeline artifacts.
 * AWS Identification and Access Management (IAM) for IAM roles used by CodeBuild, CodeDeploy, and CloudFormation.
