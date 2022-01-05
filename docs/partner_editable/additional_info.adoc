@@ -11,7 +11,7 @@ After the stack operation completes, the following output values display on the 
 |`CodePipelineUrl` |URL of the CodePipeline pipeline.
 |===
 
-After deploying this Quick Start, a build of the application starts. You can use your browser to navigate to the CodePipeline URL to observe the build process. After the build completes, the deployment process for the application creates a CloudFormation that will be named `<Quick Start Stack Name>-Deploy` using the name you enter when launching this Quick Start. 
+After deploying this Quick Start, a build of the application starts. You can use your browser to navigate to the CodePipeline URL to observe the build process. After the build completes, the deployment process for the application creates a CloudFormation named `<Quick Start stack name>-Deploy` using the name you enter when launching this Quick Start. 
 
 The stack also includes an output parameter that can be used to view your deployed application:
 
