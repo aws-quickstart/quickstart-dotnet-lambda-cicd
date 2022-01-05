@@ -12,7 +12,7 @@ image::../images/dotnet-lambda-cicd-architecture-diagram.png[Architecture]
 
 As shown in <<architecture1>>, the Quick Start sets up the following:
 
-* CodePipeline to create a pipeline with source, build, and deploy stages. The pipeline is invoked when a developer commits a code change to the AWS CodeCommit repository. 
+* CodePipeline to create a pipeline with source, build, and deploy stages. The pipeline is invoked when a developer commits a code change to the CodeCommit repository. 
 ** A CodeCommit repository to host the application source code.
 ** AWS CodeBuild to generate an AWS CloudFormation template from the source code.
 ** AWS CodeDeploy to deploy the template.
