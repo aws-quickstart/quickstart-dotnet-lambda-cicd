@@ -3,13 +3,13 @@
 |Resource |This deployment uses
 
 // Space needed to maintain table headers
-|Amazon Simple Storage Service (S3) buckets |1
-|AWS CloudFormation Stacks |2
-|AWS Identity and Access Management (IAM) roles |5
-|Amazon API Gateways |1
-|AWS Lambda Functions |1
-|Amazon CloudWatch Log Group |1
-|AWS CodeCommit Repository |1
-|AWS CodePipeline Pipeline |1
-|AWS CodeBuild Projects |1
+|S3 buckets |1
+|CloudFormation stacks |2
+|IAM roles |5
+|API Gateway endpoints |1
+|Lambda functions |1
+|CloudWatch log groups |1
+|CodeCommit repositories |1
+|CodePipeline pipelines |1
+|CodeBuild projects |1
 |===
