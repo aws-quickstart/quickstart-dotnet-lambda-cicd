@@ -1,8 +1,8 @@
 // Change the following attributes.
 :quickstart-project-name: quickstart-dotnet-lambda-cicd
-:partner-product-name: .NET CI/CD pipeline for Serverless Applications
+:partner-product-name: CI/CD pipeline for .NET Serverless Applications
 // For the following attribute, if you have no short name, enter the same name as partner-product-name.
-:partner-product-short-name: .NET CI/CD pipeline for Serverless Applications
+:partner-product-short-name: CI/CD pipeline for .NET Serverless Applications
 // If there's no partner, comment partner-company-name.
 //:partner-company-name: Example Company Name, Ltd.
 :doc-month: January
