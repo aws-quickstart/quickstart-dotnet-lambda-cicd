@@ -5,7 +5,7 @@
 :doc-month: July
 :doc-year: 2023
 //:partner-contributors: Shuai Ye, Michael McConnell, and John Smith, {partner-company-name}
-:quickstart-contributors: Andy Hopper, AWS Microsoft Specialist SA team
+:aws-contributors: Andy Hopper, AWS Microsoft Specialist SA team
 :deployment_time: 15 minutes
 :default_deployment_region: us-east-1
 :parameters_as_appendix:

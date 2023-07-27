@@ -1,8 +1,8 @@
 // Include any postdeployment steps here, such as steps necessary to test that the deployment was successful. If there are no postdeployment steps, leave this file empty.
 
-=== Postdeployment steps
+== Postdeployment steps
 
-== Test the deployment
+=== Test the deployment
 
 After the stack operation completes, the following output values display on the *Outputs* tab of the AWS CloudFormation console.
 
